@@ -1,1 +1,13 @@
-(function(_0x2867ad,_0xbccc05){const _0x21bede=a0_0x3ef6,_0x3f1cf9=_0x2867ad();while(!![]){try{const _0x3049e2=-parseInt(_0x21bede(0x89))/0x1+parseInt(_0x21bede(0x80))/0x2+parseInt(_0x21bede(0x8b))/0x3*(parseInt(_0x21bede(0x81))/0x4)+-parseInt(_0x21bede(0x87))/0x5+-parseInt(_0x21bede(0x91))/0x6*(-parseInt(_0x21bede(0x8c))/0x7)+-parseInt(_0x21bede(0x94))/0x8+parseInt(_0x21bede(0x84))/0x9*(parseInt(_0x21bede(0x92))/0xa);if(_0x3049e2===_0xbccc05)break;else _0x3f1cf9['push'](_0x3f1cf9['shift']());}catch(_0x4f9049){_0x3f1cf9['push'](_0x3f1cf9['shift']());}}}(a0_0x3f23,0x4d2b7));function a0_0x3ef6(_0x13ec30,_0x16e5ab){_0x13ec30=_0x13ec30-0x7d;const _0x3f23b1=a0_0x3f23();let _0x3ef688=_0x3f23b1[_0x13ec30];return _0x3ef688;}function a0_0x3f23(){const _0x32b941=['IcBFM','xQsKW','map','201918jTNTPk','131412IOTEjU','padStart','ICUHf','12249dBbvlW','PPTxg','moje_sekretne_solenie','1852255smbqYg','join','629716BkjTLM','iSGOz','45nwYZLt','14hQIRQo','yUgOD','from','digest','encode','1206906bHUdRC','6130vbTxGf','LvrDr','4112760ZfPhwm','5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8'];a0_0x3f23=function(){return _0x32b941;};return a0_0x3f23();}async function checkAnswer(_0xff0819){const _0x5de921=a0_0x3ef6,_0x489e39={'ICUHf':function(_0x540c20,_0x11b4b7){return _0x540c20+_0x11b4b7;},'IcBFM':_0x5de921(0x86),'PPTxg':'SHA-256','LvrDr':function(_0x25d40a,_0x453e5f){return _0x25d40a===_0x453e5f;},'xQsKW':_0x5de921(0x95),'yUgOD':function(_0x473272,_0x2b83cd){return _0x473272(_0x2b83cd);},'iSGOz':'Brawo!\x20Idź\x20do\x20level2.html'},_0x1765f8=new TextEncoder(),_0x2fb7b5=_0x1765f8[_0x5de921(0x90)](_0x489e39[_0x5de921(0x83)](_0xff0819,_0x489e39[_0x5de921(0x7d)])),_0x4a7b42=await crypto['subtle'][_0x5de921(0x8f)](_0x489e39[_0x5de921(0x85)],_0x2fb7b5),_0x4262f0=Array[_0x5de921(0x8e)](new Uint8Array(_0x4a7b42)),_0x4f83d3=_0x4262f0[_0x5de921(0x7f)](_0x342a59=>_0x342a59['toString'](0x10)[_0x5de921(0x82)](0x2,'0'))[_0x5de921(0x88)]('');_0x489e39[_0x5de921(0x93)](_0x4f83d3,_0x489e39[_0x5de921(0x7e)])&&_0x489e39[_0x5de921(0x8d)](alert,_0x489e39[_0x5de921(0x8a)]);}
+// game.js
+async function checkAnswer(input) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(input + "moje_sekretne_solenie"); // "Sól" utrudnia odgadnięcie
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  
+  // Hash poprawnego hasła
+  if (hashHex === "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8") {
+    alert("Brawo! Idź do level2.html");
+  }
+}
