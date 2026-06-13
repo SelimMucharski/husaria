@@ -19,10 +19,9 @@
             let odpowiedz = prompt("Czyje imię nosiła przedwojenna ulica Lipowa w Białymstoku?");
             
             if (odpowiedz && odpowiedz.trim().toLowerCase() === "piłsudskiego") {
-                alert("Poprawna odpowiedź! Przechodzisz dalej.");
                 window.location.href = "nowa_strona.html";
             } else if (odpowiedz !== null) {
-                alert("Błędna odpowiedź, spróbuj ponownie!");
+                alert("Błędna odpowiedź");
             }
         });
     </script>
