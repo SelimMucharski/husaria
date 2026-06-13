@@ -25,7 +25,12 @@ jobs:
           javascript-obfuscator assets/js/ --output dist/assets/js/ --compact true --control-flow-flattening true
 
       - name: Copy static files
-        run: cp -r index.html assets/css/ dist/
+        run: |
+          cp index.html dist/
+          
+          mkdir -p dist/assets/css
+          
+          cp -r assets/css/ dist/assets/css/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
