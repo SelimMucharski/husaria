@@ -1,0 +1,34 @@
+name: Deploy Game
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Obfuscator
+        run: npm install -g javascript-obfuscator
+
+      - name: Obfuscate JS files
+        run: |
+          mkdir -p dist/assets/js
+          javascript-obfuscator assets/js/ --output dist/assets/js/ --compact true --control-flow-flattening true
+
+      - name: Copy static files
+        run: cp -r index.html assets/css dist/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
