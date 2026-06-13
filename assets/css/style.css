@@ -14,6 +14,12 @@ body {
     width: 66.66%;
 }
 
+.terminal img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 input {
     background: #000;
     border: 1px solid #33ff33;
