@@ -16,24 +16,24 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Obfuscator
-        run: npm install -g javascript-obfuscator
+      # - name: Install Obfuscator
+      #   run: npm install -g javascript-obfuscator
 
-      - name: Obfuscate JS files
-        run: |
-          mkdir -p dist/assets/js
-          javascript-obfuscator assets/js/ --output dist/assets/js/ --compact true --control-flow-flattening true
+      # - name: Obfuscate JS files
+      #   run: |
+      #     mkdir -p dist/assets/js
+      #     javascript-obfuscator assets/js/ --output dist/assets/js/ --compact true --control-flow-flattening true
 
-      - name: Copy static files
-        run: |
-          cp index.html dist/
+      # - name: Copy static files
+      #   run: |
+      #     cp index.html dist/
           
-          mkdir -p dist/assets/css
+      #     mkdir -p dist/assets/css
           
-          cp -r assets/css/ dist/assets/
+      #     cp -r assets/css/ dist/assets/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: .
