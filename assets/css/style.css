@@ -1,17 +1,34 @@
 body {
+    margin: 0;
     background-color: #0d0d0d;
     color: #33ff33;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .terminal {
     border: 1px solid #33ff33;
     padding: 20px;
     width: 66.66%;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 20px; /* Odstęp między obrazem a tekstem */
+    margin-bottom: 20px;
+}
+
+.left-side {
+    flex: 1; /* Obraz zajmuje 1 część */
+}
+
+.right-side {
+    flex: 1; /* Tekst zajmuje 2 części */
 }
 
 .terminal img {
@@ -20,19 +37,17 @@ body {
     display: block;
 }
 
-input {
-    background: #000;
-    border: 1px solid #33ff33;
-    color: #33ff33;
-    padding: 5px;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
 button {
     background: #33ff33;
     color: #000;
     border: none;
-    cursor: pointer;
+    padding: 10px;
     width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button:hover {
+    background: #28cc28;
 }
