@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>POZIOM 1</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="terminal">
+        <img src="assets/img/PLAN_MIASTA_BIALEGOSTOKU_10K.jpg">
+        <br>
+        
+        <button id="btnPytanie">Pytanie</button>
+    </div>
+
+    <script>
+        document.getElementById('btnPytanie').addEventListener('click', function() {
+            let odpowiedz = prompt("Czyje imię nosiła przedwojenna ulica Lipowa w Białymstoku?");
+            
+            if (odpowiedz && odpowiedz.trim().toLowerCase() === "piłsudskiego") {
+                alert("Poprawna odpowiedź! Przechodzisz dalej.");
+                window.location.href = "nowa_strona.html";
+            } else if (odpowiedz !== null) {
+                alert("Błędna odpowiedź, spróbuj ponownie!");
+            }
+        });
+    </script>
+</body>
+</html>
